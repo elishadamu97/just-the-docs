@@ -13,6 +13,11 @@
     color: white;
     margin-top: 25px;
   }
+  @media screen and (max-width: 480px) {
+  #main-header{
+    display: none;
+  }
+}
 </style>
 <div id="main-header" class="main-header">
   <a href="{{ '/' | relative_url }}" class="site-title lh-tight">{% include title.html %}</a>    
