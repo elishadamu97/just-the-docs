@@ -1,11 +1,26 @@
+<style>
+  #main-header{
+    background-color: #6957E7 !important;
+    display: flex;
+    flex-direction: row;
+  }
+  .nav-text{
+    margin-top: 20px;
+    color: aliceblue;
+    margin-left: -20px !important;
+  }
+  .fab{
+    color: white;
+    margin-top: 25px;
+  }
+</style>
 <div id="main-header" class="main-header">
-  {% if site.search_enabled != false %}
-    {% include components/search_header.html %}
-  {% else %}
-    <div></div>
-  {% endif %}
-  {% include header_custom.html %}
-  {% if site.aux_links %}
-    {% include components/aux_nav.html %}
-  {% endif %}
+  <a href="{{ '/' | relative_url }}" class="site-title lh-tight">{% include title.html %}</a>    
+        <a class="nav-text" href="#">Server World</a>
+        <a class="nav-text" href="#">Other OS Configs</a>
+        <a class="nav-text" href="#">Privacy Policy</a>
+        <a class="nav-text" href="#">Support</a>
+        <a class="nav-text" href="#">Contact Us</a>
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
 </div>

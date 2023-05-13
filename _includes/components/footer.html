@@ -1,34 +1,51 @@
-{% capture footer_custom %}
-  {%- include footer_custom.html -%}
-{% endcapture %}
-{% if footer_custom != "" or site.last_edit_timestamp or site.gh_edit_link %}
-  <hr>
+<style>
+  footer{
+    background-color: #3B3B3B;
+    text-align: center;
+  }
+  .footer-nav{
+    display: flex;
+    flex-direction: row;
+    margin-left: 20%;
+    margin-top: 20px;
+  }
+  .footer-text{
+    color: #c5c5c5;
+    text-decoration: none;
+    margin-left: 50px;
+  }
+  .site-title-footer{
+    margin-top: 20px !important;
+    margin-left: -65px;
+    color: white;
+    font-size: 30px;
+  }
+  .footer-social{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 40%;
+  }
+ .social{
+  margin-left: 50px;
+  margin-bottom: 20px;
+  font-size: 25px;
+ }
+</style>
+
   <footer>
-    {% if site.back_to_top %}
-      <p><a href="#top" id="back-to-top">{{ site.back_to_top_text }}</a></p>
-    {% endif %}
+    <a href="{{ '/' | relative_url }}" class="site-title-footer lh-tight">{% include title.html %}</a>
 
-    {{ footer_custom }}
-
-    {% if site.last_edit_timestamp or site.gh_edit_link %}
-      <div class="d-flex mt-2">
-        {% if site.last_edit_timestamp and site.last_edit_time_format and page.last_modified_date %}
-          <p class="text-small text-grey-dk-000 mb-0 mr-2">
-            Page last modified: <span class="d-inline-block">{{ page.last_modified_date | date: site.last_edit_time_format }}</span>.
-          </p>
-        {% endif %}
-        {% if
-          site.gh_edit_link and
-          site.gh_edit_link_text and
-          site.gh_edit_repository and
-          site.gh_edit_branch and
-          site.gh_edit_view_mode
-        %}
-          <p class="text-small text-grey-dk-000 mb-0">
-            <a href="{{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}{% if site.gh_edit_source %}/{{ site.gh_edit_source }}{% endif %}{% if page.collection and site.collections_dir %}/{{ site.collections_dir }}{% endif %}/{{ page.path }}" id="edit-this-page">{{ site.gh_edit_link_text }}</a>
-          </p>
-        {% endif %}
-      </div>
-    {% endif %}
+    <div class="footer-nav">
+      <a class="footer-text" href="#">Server World</a>
+      <a class="footer-text" href="#">Other OS Configs</a>
+      <a class="footer-text" href="#">Privacy Policy</a>
+      <a class="footer-text" href="#">Support</a>
+      <a class="footer-text" href="#">Contact Us</a>
+    </div>
+    <div class="footer-social">
+     <a href="#" target="_blank" rel="noopener noreferrer"> <i class=" social fab fa-facebook-f"></i></a>
+      <a href="#" target="_blank" rel="noopener noreferrer"> <i class=" social fab fa-twitter"></i></a>
+    </div>
   </footer>
-{% endif %}
