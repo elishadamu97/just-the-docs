@@ -3,6 +3,11 @@
     background-color: #6957E7 !important;
     display: flex;
     flex-direction: row;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    padding-right: 200px;
   }
   .nav-text{
     margin-top: 20px;
@@ -20,12 +25,13 @@
 }
 </style>
 <div id="main-header" class="main-header">
-  <a href="{{ '/' | relative_url }}" class="site-title lh-tight">{% include title.html %}</a>    
+  <a href="{{ '/' | relative_url }}" class="site-title lh-tight">{% include title.html %}</a>  
+    
         <a class="nav-text" href="#">Server World</a>
         <a class="nav-text" href="#">Other OS Configs</a>
         <a class="nav-text" href="#">Privacy Policy</a>
         <a class="nav-text" href="#">Support</a>
         <a class="nav-text" href="#">Contact Us</a>
-        <i class="fab fa-facebook-f"></i>
-        <i class="fab fa-twitter"></i>
+        <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
 </div>
